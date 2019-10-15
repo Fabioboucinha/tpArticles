@@ -28,12 +28,12 @@ class Article
 
     /**
      * @ORM\Column(type="float")
-     * 
+     * @Assert\Range(min=10,max=500,minMessage="Le prix minimum est de 10 euros",maxMessage="Le prix maximum est de 500 euros")
      */
     private $prix;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text", nullable=false)
      * @Assert\NotBlank()
      * @Assert\Length(min=10, minMessage="Minimum 10 caractéres",max=200,maxMessage="Maximum 200 caractéres")
      */
