@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Edition d'une annonce {% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <h1>Modifer une annonce : {{ad.libelle}}</h1>
+        {{ form_start(form) }}
+
+        {{form_widget(form)}}
+
+        <button type="submit" class="btn btn-info"> Editer l'annonce</button> 
+        <a href="/admin"><button type="button" class="btn btn-danger"> Annuler</button></a>
+        {{ form_end(form) }}
+        
+</div>
+{% endblock %}
+
+
+

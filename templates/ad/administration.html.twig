@@ -1,0 +1,35 @@
+ {% extends 'base.html.twig' %}
+
+
+ {% block body %}
+ 
+ <div class="container">
+    
+    <a href="ads/new"><button type="button" class="bbn btn-info">Créer un nouveau article!</button></a>
+            
+                <table>
+    <thead>
+        <tr>
+            <th style="width:100px;"colspan="1">ID</th>
+            <th colspan="1">Articles</th>
+            <th style="width:100px;" sscolspan="1">Prix </th>
+            <th style="width:100px;"colspan="1">Modifier </th>
+            <th style="width:100px;" colspan="1">Supprimer </th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for ad in ads %}
+        <tr>
+            <td>{{ad.id}} </td>
+            <td>{{ad.libelle}} </td>
+            <td>{{ad.prix}} </td>
+            <td><a href="/admin/{{ad.id}}/edit" ><button type="button"  class="btn btn-info">Modifier</button></a></td>
+            <td><a href="/delete/{{ad.id}}"><button type="button"  class="btn btn-danger">Supprimer</button></a></td>
+             {% endfor %}   
+        </tr>
+    </tbody>
+</table>
+             
+   
+</div>    
+{% endblock %}   
